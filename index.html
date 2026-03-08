@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snooze It - 最簡單的稍後提醒 App | iPhone 提醒工具</title>
+    <meta name="description" content="Snooze It 讓你用最簡單的方式設定提醒：倒數計時、指定時機、循環提醒三種模式，搭配 Widget 與 Safari 分享，不再忘記任何事。">
+    <meta name="keywords" content="iPhone 提醒, 稍後提醒, 倒數計時, 喝水提醒, Safari 稍後閱讀, iOS Widget, reminder app, snooze reminder">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Snooze It - 最簡單的稍後提醒 App">
+    <meta property="og:description" content="看到待辦事項，設個時間，晚點再處理。三種提醒模式 + Widget + Safari 分享。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adriechang.github.io/Snoozeit-Site/">
+    <meta property="og:image" content="https://adriechang.github.io/Snoozeit-Site/og-image.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="zh_CN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Snooze It - 最簡單的稍後提醒 App">
+    <meta name="twitter:description" content="看到待辦事項，設個時間，晚點再處理。三種提醒模式 + Widget + Safari 分享。">
+
+    <!-- Apple Smart App Banner (replace XXXXXXXXXX with real App Store ID after launch) -->
+    <meta name="apple-itunes-app" content="app-id=XXXXXXXXXX">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://adriechang.github.io/Snoozeit-Site/">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Snooze It",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ProductivityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "1.99",
+            "priceCurrency": "USD"
+        },
+        "description": "The simplest way to set reminders. Three modes: countdown, moment, and recurring. With Widgets and Safari sharing.",
+        "softwareVersion": "1.0",
+        "author": {
+            "@type": "Person",
+            "name": "Adrie Chang"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header class="hero-header">
+        <div class="container">
+            <nav class="top-nav">
+                <span class="logo">Snooze It</span>
+                <div class="lang-switch">
+                    <a href="#" class="active" onclick="switchLang('zh'); return false;">繁中</a>
+                    <a href="#" onclick="switchLang('en'); return false;">EN</a>
+                    <a href="#" onclick="switchLang('ja'); return false;">日本語</a>
+                </div>
+            </nav>
+
+            <!-- 繁體中文 Hero -->
+            <div id="hero-zh" class="hero-content lang-content">
+                <h1>設個提醒，晚點再說</h1>
+                <p class="hero-sub">Snooze It 讓你用最簡單的方式記住稍後要做的事。<br>不是任務管理工具，只是一個好用的提醒小幫手。</p>
+                <a href="#" class="cta-button" id="cta-zh">
+                    <img src="appstore-badge-zh.svg" alt="在 App Store 下載" onerror="this.parentElement.textContent='App Store 下載'">
+                </a>
+                <p class="price">USD $1.99 一次買斷 / 無廣告 / 無訂閱</p>
+            </div>
+
+            <!-- English Hero -->
+            <div id="hero-en" class="hero-content lang-content" style="display:none;">
+                <h1>Set a reminder, deal with it later</h1>
+                <p class="hero-sub">Snooze It is the simplest way to remember things for later.<br>Not a task manager — just a handy reminder tool.</p>
+                <a href="#" class="cta-button" id="cta-en">
+                    <img src="appstore-badge-en.svg" alt="Download on the App Store" onerror="this.parentElement.textContent='Download on App Store'">
+                </a>
+                <p class="price">USD $1.99 one-time purchase / No ads / No subscription</p>
+            </div>
+
+            <!-- 日本語 Hero -->
+            <div id="hero-ja" class="hero-content lang-content" style="display:none;">
+                <h1>リマインダーを設定、あとで対応</h1>
+                <p class="hero-sub">Snooze It は「あとでやること」を忘れないための<br>最もシンプルなリマインダーアプリです。</p>
+                <a href="#" class="cta-button" id="cta-ja">
+                    <img src="appstore-badge-ja.svg" alt="App Store からダウンロード" onerror="this.parentElement.textContent='App Store ダウンロード'">
+                </a>
+                <p class="price">USD $1.99 買い切り / 広告なし / サブスクなし</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- How it works -->
+        <section class="how-it-works">
+            <div class="container">
+                <div id="hiw-zh" class="lang-content">
+                    <h2>怎麼使用？</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <h3>看到要做的事</h3>
+                            <p>瀏覽網頁、想到待辦、收到訊息</p>
+                        </div>
+                        <div class="step-arrow">&rarr;</div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <h3>設個時間</h3>
+                            <p>30 分鐘後、今晚、每 2 小時</p>
+                        </div>
+                        <div class="step-arrow">&rarr;</div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <h3>放心忘記</h3>
+                            <p>時間到了 Snooze It 會提醒你</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="hiw-en" class="lang-content" style="display:none;">
+                    <h2>How it works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <h3>See something to do</h3>
+                            <p>Browsing the web, got a task, received a message</p>
+                        </div>
+                        <div class="step-arrow">&rarr;</div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <h3>Set a time</h3>
+                            <p>In 30 minutes, tonight, every 2 hours</p>
+                        </div>
+                        <div class="step-arrow">&rarr;</div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <h3>Forget about it</h3>
+                            <p>Snooze It will remind you when it's time</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="hiw-ja" class="lang-content" style="display:none;">
+                    <h2>使い方</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <h3>やることを見つける</h3>
+                            <p>ウェブ閲覧、タスク発見、メッセージ受信</p>
+                        </div>
+                        <div class="step-arrow">&rarr;</div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <h3>時間を設定</h3>
+                            <p>30分後、今夜、2時間ごと</p>
+                        </div>
+                        <div class="step-arrow">&rarr;</div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <h3>安心して忘れる</h3>
+                            <p>時間になったら Snooze It がお知らせ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three modes -->
+        <section class="modes">
+            <div class="container">
+                <div id="modes-zh" class="lang-content">
+                    <h2>三種靈活的提醒模式</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">&#9201;</div>
+                            <h3>倒數計時</h3>
+                            <p>「30 分鐘後提醒我」<br>「2 小時後再說」</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#127769;</div>
+                            <h3>指定時機</h3>
+                            <p>「今晚回家後」<br>「明天早上」</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128260;</div>
+                            <h3>循環提醒</h3>
+                            <p>「每 2 小時提醒一次喝水」<br>「每 45 分鐘休息一下」</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="modes-en" class="lang-content" style="display:none;">
+                    <h2>Three flexible reminder modes</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">&#9201;</div>
+                            <h3>Countdown</h3>
+                            <p>"Remind me in 30 minutes"<br>"2 hours from now"</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#127769;</div>
+                            <h3>Moment</h3>
+                            <p>"Tonight when I get home"<br>"Tomorrow morning"</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128260;</div>
+                            <h3>Recurring</h3>
+                            <p>"Every 2 hours to drink water"<br>"Every 45 minutes, take a break"</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="modes-ja" class="lang-content" style="display:none;">
+                    <h2>3つの柔軟なリマインドモード</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">&#9201;</div>
+                            <h3>カウントダウン</h3>
+                            <p>「30分後にリマインド」<br>「2時間後にまた」</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#127769;</div>
+                            <h3>タイミング指定</h3>
+                            <p>「今夜帰宅後」<br>「明日の朝」</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128260;</div>
+                            <h3>繰り返し</h3>
+                            <p>「2時間ごとに水を飲むリマインド」<br>「45分ごとに休憩」</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More features -->
+        <section class="more-features">
+            <div class="container">
+                <div id="feat-zh" class="lang-content">
+                    <h2>不只是提醒</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128218;</div>
+                            <div>
+                                <h3>分類管理</h3>
+                                <p>工作、生活、稍後閱讀 — 自訂分類與預設文字，讓提醒井井有條</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#127760;</div>
+                            <div>
+                                <h3>Safari 分享</h3>
+                                <p>瀏覽網頁時直接分享到 Snooze It，設定時間稍後再看</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128241;</div>
+                            <div>
+                                <h3>桌面 Widget</h3>
+                                <p>快速新增提醒、查看下一則提醒，不用打開 App</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128276;</div>
+                            <div>
+                                <h3>通知操作</h3>
+                                <p>收到提醒後可一鍵再延 30 分鐘或標記完成</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="feat-en" class="lang-content" style="display:none;">
+                    <h2>More than reminders</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128218;</div>
+                            <div>
+                                <h3>Categories</h3>
+                                <p>Work, Life, Read Later — custom categories with preset text keep things organized</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#127760;</div>
+                            <div>
+                                <h3>Safari Share</h3>
+                                <p>Share web pages directly to Snooze It for later reading</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128241;</div>
+                            <div>
+                                <h3>Home Screen Widgets</h3>
+                                <p>Quick add reminders or see what's next without opening the app</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128276;</div>
+                            <div>
+                                <h3>Notification Actions</h3>
+                                <p>Snooze for 30 more minutes or mark as done right from the notification</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="feat-ja" class="lang-content" style="display:none;">
+                    <h2>リマインダー以上の便利さ</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128218;</div>
+                            <div>
+                                <h3>カテゴリ管理</h3>
+                                <p>仕事、生活、あとで読む — カスタムカテゴリとプリセットで整理整頓</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#127760;</div>
+                            <div>
+                                <h3>Safari共有</h3>
+                                <p>ウェブページを直接 Snooze It に共有して、あとで読む</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128241;</div>
+                            <div>
+                                <h3>ホーム画面ウィジェット</h3>
+                                <p>アプリを開かずにリマインダーを追加・確認</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">&#128276;</div>
+                            <div>
+                                <h3>通知アクション</h3>
+                                <p>通知から30分延長または完了をワンタップ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy callout -->
+        <section class="privacy-callout">
+            <div class="container">
+                <div id="priv-zh" class="lang-content">
+                    <h2>你的資料，只在你的手機上</h2>
+                    <p>Snooze It 不收集任何資料、不使用分析工具、不含廣告。所有提醒內容僅儲存在裝置本地。</p>
+                </div>
+                <div id="priv-en" class="lang-content" style="display:none;">
+                    <h2>Your data stays on your device</h2>
+                    <p>Snooze It collects zero data. No analytics, no tracking, no ads. All reminders are stored locally on your device.</p>
+                </div>
+                <div id="priv-ja" class="lang-content" style="display:none;">
+                    <h2>データはあなたのデバイスだけに</h2>
+                    <p>Snooze It はデータを一切収集しません。分析ツール、トラッキング、広告なし。すべてのリマインダーはデバイス内にのみ保存されます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <div id="cta2-zh" class="lang-content">
+                    <h2>不再忘記任何事</h2>
+                    <a href="#" class="cta-button">App Store 下載</a>
+                    <p class="price">USD $1.99 / 支援繁中、簡中、英文、日文</p>
+                </div>
+                <div id="cta2-en" class="lang-content" style="display:none;">
+                    <h2>Never forget anything again</h2>
+                    <a href="#" class="cta-button">Download on App Store</a>
+                    <p class="price">USD $1.99 / English, Chinese, Japanese</p>
+                </div>
+                <div id="cta2-ja" class="lang-content" style="display:none;">
+                    <h2>もう何も忘れない</h2>
+                    <a href="#" class="cta-button">App Store ダウンロード</a>
+                    <p class="price">USD $1.99 / 日本語・英語・中国語対応</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy / 隱私權政策</a>
+                <a href="support.html">Support / 技術支援</a>
+            </div>
+            <p>&copy; 2026 Snooze It. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(function(el) { el.style.display = 'none'; });
+            document.querySelectorAll('[id$="-' + lang + '"]').forEach(function(el) { el.style.display = ''; });
+            document.querySelectorAll('.lang-switch a').forEach(function(el) { el.classList.remove('active'); });
+            var langMap = { zh: 0, en: 1, ja: 2 };
+            var links = document.querySelectorAll('.lang-switch a');
+            if (links[langMap[lang]]) links[langMap[lang]].classList.add('active');
+        }
+
+        // Auto-detect language
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage || '';
+            if (userLang.startsWith('ja')) {
+                switchLang('ja');
+            } else if (userLang.startsWith('en')) {
+                switchLang('en');
+            }
+        })();
+    </script>
+</body>
+</html>
