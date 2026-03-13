@@ -3,21 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技術支援 - Snooze It</title>
+    <title>技術支援 - Snooze It | Support & FAQ</title>
+    <meta name="description" content="Snooze It 常見問題與技術支援：通知設定、Widget 更新、Safari 分享等問題解答。FAQ and support for Snooze It reminder app.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Support & FAQ - Snooze It">
+    <meta property="og:description" content="FAQ and support for Snooze It. Solutions for notifications, widgets, Safari sharing, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adriechang.github.io/Snoozeit-Site/support.html">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://adriechang.github.io/Snoozeit-Site/support.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://adriechang.github.io/Snoozeit-Site/support.html">
+    <link rel="alternate" hreflang="en" href="https://adriechang.github.io/Snoozeit-Site/support.html">
+    <link rel="alternate" hreflang="ja" href="https://adriechang.github.io/Snoozeit-Site/support.html">
+    <link rel="alternate" hreflang="x-default" href="https://adriechang.github.io/Snoozeit-Site/support.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3B82F6">
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why am I not receiving reminder notifications from Snooze It?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Please check: 1) Notification permission is granted in Settings → Notifications → Snooze It → Allow. 2) Focus mode is off, or Snooze It is added to the allowed list. 3) Device is not on silent mode (notifications will still appear, but without sound)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "My Snooze It Widget isn't updating. How do I fix it?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Widgets refresh approximately every 15 minutes. To force a refresh: open the Snooze It app (the Widget will refresh automatically), or long press Widget → Edit Widget → reselect settings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "I can't find Snooze It in Safari's share sheet. What should I do?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tap Safari's share button → scroll the app row to the right → tap 'More'. Find Snooze It in the list and enable it."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will my Snooze It data sync across devices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Currently, Snooze It stores data locally on-device only. Cross-device sync is not supported at this time."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://adriechang.github.io/Snoozeit-Site/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Support",
+                "item": "https://adriechang.github.io/Snoozeit-Site/support.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Snooze It</h1>
+            <p class="logo"><a href="index.html">Snooze It</a></p>
         </div>
     </header>
 
     <main class="container page-content">
-        <nav class="lang-switch">
-            <a href="#zh" class="active" onclick="switchLang('zh')">繁中</a>
-            <a href="#en" onclick="switchLang('en')">EN</a>
-            <a href="#ja" onclick="switchLang('ja')">日本語</a>
+        <nav class="lang-switch page-lang-switch">
+            <button class="active" onclick="switchLang('zh')" aria-label="切換至繁體中文">繁中</button>
+            <button onclick="switchLang('en')" aria-label="Switch to English">EN</button>
+            <button onclick="switchLang('ja')" aria-label="日本語に切り替え">日本語</button>
         </nav>
 
         <!-- 繁體中文 -->
@@ -148,10 +237,12 @@
 
     <script>
         function switchLang(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.lang-content').forEach(function(el) { el.style.display = 'none'; });
             document.getElementById('lang-' + lang).style.display = 'block';
-            document.querySelectorAll('.lang-switch a').forEach(el => el.classList.remove('active'));
-            document.querySelector('.lang-switch a[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+            document.querySelectorAll('.lang-switch button').forEach(function(el) { el.classList.remove('active'); });
+            var langMap = { zh: 0, en: 1, ja: 2 };
+            var btns = document.querySelectorAll('.lang-switch button');
+            if (btns[langMap[lang]]) btns[langMap[lang]].classList.add('active');
         }
     </script>
 </body>

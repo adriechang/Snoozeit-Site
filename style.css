@@ -50,17 +50,24 @@ body {
     gap: 4px;
 }
 
-.lang-switch a {
+.lang-switch a,
+.lang-switch button {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     padding: 4px 10px;
     border-radius: 4px;
     transition: background 0.2s, color 0.2s;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .lang-switch a:hover,
-.lang-switch a.active {
+.lang-switch a.active,
+.lang-switch button:hover,
+.lang-switch button.active {
     color: #fff;
     background: rgba(255, 255, 255, 0.15);
 }
@@ -395,6 +402,30 @@ footer {
 
 .back-link:hover {
     text-decoration: underline;
+}
+
+/* ---- Page-level lang switch (light bg) ---- */
+.page-lang-switch button {
+    color: var(--text-light);
+}
+
+.page-lang-switch button:hover,
+.page-lang-switch button.active {
+    color: var(--brand);
+    background: var(--brand-light);
+}
+
+/* ---- Logo link ---- */
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header .logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    padding: 16px 0;
 }
 
 /* ---- Responsive ---- */

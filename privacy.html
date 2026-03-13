@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隱私權政策 - Snooze It</title>
+    <title>隱私權政策 - Snooze It | Privacy Policy</title>
+    <meta name="description" content="Snooze It 不收集任何使用者資料。所有提醒內容僅儲存在裝置本地，無分析工具、無廣告、無追蹤。">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Policy - Snooze It">
+    <meta property="og:description" content="Snooze It collects zero data. No analytics, no tracking, no ads. All reminders are stored locally on your device.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adriechang.github.io/Snoozeit-Site/privacy.html">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://adriechang.github.io/Snoozeit-Site/privacy.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://adriechang.github.io/Snoozeit-Site/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://adriechang.github.io/Snoozeit-Site/privacy.html">
+    <link rel="alternate" hreflang="ja" href="https://adriechang.github.io/Snoozeit-Site/privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://adriechang.github.io/Snoozeit-Site/privacy.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3B82F6">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Snooze It</h1>
+            <p class="logo"><a href="index.html">Snooze It</a></p>
         </div>
     </header>
 
     <main class="container page-content">
-        <nav class="lang-switch">
-            <a href="#zh" class="active" onclick="switchLang('zh')">繁中</a>
-            <a href="#en" onclick="switchLang('en')">EN</a>
-            <a href="#ja" onclick="switchLang('ja')">日本語</a>
+        <nav class="lang-switch page-lang-switch">
+            <button class="active" onclick="switchLang('zh')" aria-label="切換至繁體中文">繁中</button>
+            <button onclick="switchLang('en')" aria-label="Switch to English">EN</button>
+            <button onclick="switchLang('ja')" aria-label="日本語に切り替え">日本語</button>
         </nav>
 
         <!-- 繁體中文 -->
@@ -160,10 +185,12 @@
 
     <script>
         function switchLang(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.lang-content').forEach(function(el) { el.style.display = 'none'; });
             document.getElementById('lang-' + lang).style.display = 'block';
-            document.querySelectorAll('.lang-switch a').forEach(el => el.classList.remove('active'));
-            document.querySelector('.lang-switch a[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+            document.querySelectorAll('.lang-switch button').forEach(function(el) { el.classList.remove('active'); });
+            var langMap = { zh: 0, en: 1, ja: 2 };
+            var btns = document.querySelectorAll('.lang-switch button');
+            if (btns[langMap[lang]]) btns[langMap[lang]].classList.add('active');
         }
     </script>
 </body>
