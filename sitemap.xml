@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://adriechang.github.io/Snoozeit-Site/</loc>
-        <lastmod>2026-03-13</lastmod>
+        <lastmod>2026-03-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -17,5 +17,29 @@
         <lastmod>2026-03-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://adriechang.github.io/Snoozeit-Site/use-cases/drink-water-reminder.html</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://adriechang.github.io/Snoozeit-Site/use-cases/read-later-reminder.html</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://adriechang.github.io/Snoozeit-Site/use-cases/medication-reminder.html</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>

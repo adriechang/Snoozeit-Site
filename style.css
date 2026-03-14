@@ -428,6 +428,85 @@ header .logo {
     padding: 16px 0;
 }
 
+/* ---- Use Case Pages ---- */
+.use-case-page h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.use-case-page h2 {
+    margin-top: 36px;
+}
+
+.use-case-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.use-case-step {
+    background: var(--brand-light);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.use-case-step strong {
+    color: var(--brand-dark);
+}
+
+.use-case-step p {
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+.use-case-cta {
+    text-align: center;
+    margin: 48px 0 24px;
+}
+
+.use-case-cta .cta-button {
+    background: var(--brand);
+    color: #fff;
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.15s;
+}
+
+.use-case-cta .cta-button:hover {
+    background: var(--brand-dark);
+}
+
+.use-case-cta .price {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-top: 12px;
+}
+
+/* ---- Footer use-case links ---- */
+.footer-use-cases {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 0.8rem;
+}
+
+.footer-use-cases a {
+    color: var(--text-light);
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-use-cases a:hover {
+    color: var(--brand);
+    opacity: 1;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
     .hero-content h1 {

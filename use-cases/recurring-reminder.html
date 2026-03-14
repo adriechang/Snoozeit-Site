@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循環提醒 App — Snooze It 定時重複提醒工具 | Recurring Reminder App</title>
+    <meta name="description" content="需要每隔固定時間提醒一次？Snooze It 的循環提醒模式讓你設定每 15 分鐘到 24 小時的重複提醒。免費 iPhone 循環提醒工具。">
+    <meta name="keywords" content="循環提醒, 定時提醒, 重複提醒 app, recurring reminder app, repeat reminder iPhone, interval timer, 繰り返しリマインダー">
+
+    <meta property="og:title" content="循環提醒 App — Snooze It">
+    <meta property="og:description" content="設定每隔固定時間重複提醒。Snooze It 免費循環提醒工具，適用喝水、休息、運動等場景。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html">
+    <meta property="og:image" content="https://adriechang.github.io/Snoozeit-Site/og-image.png">
+    <meta property="og:locale" content="zh_TW">
+
+    <link rel="canonical" href="https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html">
+    <link rel="alternate" hreflang="en" href="https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html">
+    <link rel="alternate" hreflang="ja" href="https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html">
+    <link rel="alternate" hreflang="x-default" href="https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <meta name="theme-color" content="#3B82F6">
+    <meta name="apple-itunes-app" content="app-id=6760223190">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to set up recurring reminders with Snooze It",
+        "description": "Set interval-based repeating reminders on iPhone in 3 steps",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Open Snooze It",
+                "text": "Open the app or use the home screen Widget to quickly add a reminder"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Choose Recurring mode",
+                "text": "Type what you want to be reminded about, select Recurring mode, and set the interval (15 min, 30 min, 1 hour, or 24 hours)"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Get repeated notifications",
+                "text": "You'll receive notifications at every interval. Tap Done to stop, or it keeps reminding you automatically."
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adriechang.github.io/Snoozeit-Site/" },
+            { "@type": "ListItem", "position": 2, "name": "循環提醒", "item": "https://adriechang.github.io/Snoozeit-Site/use-cases/recurring-reminder.html" }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo"><a href="../index.html">Snooze It</a></p>
+        </div>
+    </header>
+
+    <main class="container page-content use-case-page">
+        <nav class="lang-switch page-lang-switch">
+            <button class="active" onclick="switchLang('zh')" aria-label="繁中">繁中</button>
+            <button onclick="switchLang('en')" aria-label="EN">EN</button>
+            <button onclick="switchLang('ja')" aria-label="日本語">日本語</button>
+        </nav>
+
+        <!-- 繁體中文 -->
+        <div id="lang-zh" class="lang-content">
+            <h1>循環提醒 — 每隔固定時間自動提醒</h1>
+            <p class="subtitle">需要每隔一段時間做同一件事？Snooze It 的循環提醒模式幫你自動重複通知。</p>
+
+            <h2>什麼時候需要循環提醒？</h2>
+            <ul>
+                <li><strong>每 1-2 小時喝水</strong> — 養成喝水習慣</li>
+                <li><strong>每 45 分鐘休息</strong> — 久坐工作者的護眼/伸展提醒</li>
+                <li><strong>每 4-8 小時吃藥</strong> — 按時服藥不忘記</li>
+                <li><strong>每 30 分鐘檢查</strong> — 等重要訊息或外送到達</li>
+                <li><strong>每天一次</strong> — 每日習慣（運動、記帳、日記）</li>
+            </ul>
+
+            <h2>怎麼設定？</h2>
+            <div class="use-case-steps">
+                <div class="use-case-step">
+                    <strong>1. 新增提醒</strong>
+                    <p>打開 Snooze It，輸入提醒內容（如「休息一下」、「看看外送」）。</p>
+                </div>
+                <div class="use-case-step">
+                    <strong>2. 選擇循環模式</strong>
+                    <p>切換到「循環提醒」tab，選擇間隔時間：15 分鐘、30 分鐘、1 小時、或 24 小時。</p>
+                </div>
+                <div class="use-case-step">
+                    <strong>3. 自動重複通知</strong>
+                    <p>每次收到通知點開後，Snooze It 會自動排程下一次。想停止就標記「完成」。</p>
+                </div>
+            </div>
+
+            <h2>跟 iPhone 內建提醒有什麼不同？</h2>
+            <p>iPhone 內建的「提醒事項」App 可以設定每日/每週重複，但<strong>不能設定「每 2 小時」這種間隔式循環</strong>。Snooze It 的循環提醒是以間隔時間為基準，從你啟動開始計算，更適合這類場景。</p>
+
+            <h2>關鍵特色</h2>
+            <ul>
+                <li><strong>通知即觸發下一次</strong> — 點開通知後自動排程下一次提醒</li>
+                <li><strong>可隨時延後</strong> — 忙的話延後 30 分鐘，不影響循環</li>
+                <li><strong>分類管理</strong> — 喝水、吃藥、運動分別歸類</li>
+                <li><strong>Widget 查看</strong> — 桌面直接看下一個提醒還有多久</li>
+            </ul>
+
+            <div class="use-case-cta">
+                <a href="https://apps.apple.com/us/app/snooze-it-quick-reminders/id6760223190" class="cta-button">免費下載 Snooze It</a>
+                <p class="price">免費 / 無廣告 / 無訂閱</p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div id="lang-en" class="lang-content" style="display:none;">
+            <h1>Recurring Reminders — Automatic Interval-Based Notifications</h1>
+            <p class="subtitle">Need to do something every few hours? Snooze It's recurring mode automatically repeats notifications at your chosen interval.</p>
+
+            <h2>When do you need recurring reminders?</h2>
+            <ul>
+                <li><strong>Every 1-2 hours: drink water</strong> — Build a hydration habit</li>
+                <li><strong>Every 45 minutes: take a break</strong> — Eye rest & stretching for desk workers</li>
+                <li><strong>Every 4-8 hours: take medication</strong> — Stay on schedule</li>
+                <li><strong>Every 30 minutes: check status</strong> — Waiting for deliveries or important messages</li>
+                <li><strong>Once daily</strong> — Exercise, journaling, daily habits</li>
+            </ul>
+
+            <h2>How to set it up</h2>
+            <div class="use-case-steps">
+                <div class="use-case-step">
+                    <strong>1. Add a reminder</strong>
+                    <p>Open Snooze It, type what you want to be reminded about.</p>
+                </div>
+                <div class="use-case-step">
+                    <strong>2. Choose Recurring mode</strong>
+                    <p>Switch to the "Recurring" tab, pick your interval: 15 min, 30 min, 1 hour, or 24 hours.</p>
+                </div>
+                <div class="use-case-step">
+                    <strong>3. Automatic repeat notifications</strong>
+                    <p>Each time you open the notification, Snooze It automatically schedules the next one. Mark "Done" to stop.</p>
+                </div>
+            </div>
+
+            <h2>How is this different from Apple Reminders?</h2>
+            <p>Apple's built-in Reminders app supports daily/weekly repeats, but <strong>cannot do interval-based recurring like "every 2 hours"</strong>. Snooze It's recurring mode counts from when you acknowledge each notification, making it perfect for these scenarios.</p>
+
+            <h2>Key features</h2>
+            <ul>
+                <li><strong>Auto-schedule next</strong> — Opens notification → next one is automatically queued</li>
+                <li><strong>Snooze anytime</strong> — Delay 30 minutes without breaking the cycle</li>
+                <li><strong>Category management</strong> — Organize by water, meds, exercise, etc.</li>
+                <li><strong>Widget countdown</strong> — See how long until the next reminder from your home screen</li>
+            </ul>
+
+            <div class="use-case-cta">
+                <a href="https://apps.apple.com/us/app/snooze-it-quick-reminders/id6760223190" class="cta-button">Download Snooze It Free</a>
+                <p class="price">Free / No ads / No subscription</p>
+            </div>
+        </div>
+
+        <!-- 日本語 -->
+        <div id="lang-ja" class="lang-content" style="display:none;">
+            <h1>繰り返しリマインダー — 一定間隔で自動通知</h1>
+            <p class="subtitle">数時間おきに同じことをする必要がある？Snooze It の繰り返しモードが設定した間隔で自動的に通知します。</p>
+
+            <h2>繰り返しリマインダーが必要な場面</h2>
+            <ul>
+                <li><strong>1〜2時間ごと：水を飲む</strong> — 水分補給の習慣づけ</li>
+                <li><strong>45分ごと：休憩する</strong> — デスクワーカーの目の休憩・ストレッチ</li>
+                <li><strong>4〜8時間ごと：薬を飲む</strong> — 服薬スケジュールを守る</li>
+                <li><strong>30分ごと：状況確認</strong> — 配達や重要なメッセージを待っている時</li>
+                <li><strong>1日1回</strong> — 運動、日記、日課</li>
+            </ul>
+
+            <h2>設定方法</h2>
+            <div class="use-case-steps">
+                <div class="use-case-step">
+                    <strong>1. リマインダーを追加</strong>
+                    <p>Snooze It を開き、リマインドしたい内容を入力。</p>
+                </div>
+                <div class="use-case-step">
+                    <strong>2. 繰り返しモードを選択</strong>
+                    <p>「繰り返し」タブに切り替え、間隔を選択：15分、30分、1時間、24時間。</p>
+                </div>
+                <div class="use-case-step">
+                    <strong>3. 自動で繰り返し通知</strong>
+                    <p>通知を開くたびに、次の通知が自動的にスケジュールされます。「完了」で停止。</p>
+                </div>
+            </div>
+
+            <h2>Apple リマインダーとの違い</h2>
+            <p>Apple 純正のリマインダーは毎日・毎週の繰り返しに対応していますが、<strong>「2時間ごと」のようなインターバル型の繰り返しはできません</strong>。Snooze It の繰り返しモードは通知を確認した時点から次の間隔をカウントするため、このような場面に最適です。</p>
+
+            <h2>主な特徴</h2>
+            <ul>
+                <li><strong>自動スケジュール</strong> — 通知を開くと次回が自動的に予約</li>
+                <li><strong>いつでも延長可能</strong> — 30分延長してもサイクルは途切れない</li>
+                <li><strong>カテゴリ管理</strong> — 水分補給、服薬、運動などに分類</li>
+                <li><strong>ウィジェットカウントダウン</strong> — ホーム画面から次のリマインダーまでの時間を確認</li>
+            </ul>
+
+            <div class="use-case-cta">
+                <a href="https://apps.apple.com/us/app/snooze-it-quick-reminders/id6760223190" class="cta-button">Snooze It を無料ダウンロード</a>
+                <p class="price">無料 / 広告なし / サブスクなし</p>
+            </div>
+        </div>
+
+        <a href="../index.html" class="back-link">&larr; Back / 返回首頁</a>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="../privacy.html">Privacy Policy / 隱私權政策</a>
+                <a href="../support.html">Support / 技術支援</a>
+            </div>
+            <p>&copy; 2026 Snooze It. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(function(el) { el.style.display = 'none'; });
+            document.getElementById('lang-' + lang).style.display = 'block';
+            document.querySelectorAll('.lang-switch button').forEach(function(el) { el.classList.remove('active'); });
+            var langMap = { zh: 0, en: 1, ja: 2 };
+            var btns = document.querySelectorAll('.lang-switch button');
+            if (btns[langMap[lang]]) btns[langMap[lang]].classList.add('active');
+        }
+        (function() {
+            var l = navigator.language || '';
+            if (l.startsWith('ja')) switchLang('ja');
+            else if (l.startsWith('en')) switchLang('en');
+        })();
+    </script>
+</body>
+</html>
