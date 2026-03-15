@@ -123,6 +123,72 @@ body {
     margin-top: 12px;
 }
 
+/* ---- App Screenshots ---- */
+.app-screenshots {
+    background: linear-gradient(180deg, var(--brand-dark) 0%, var(--bg) 40%);
+    padding: 0 0 64px;
+    overflow: hidden;
+}
+
+.screenshots-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.phone-frame {
+    flex: 0 0 200px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    background: #000;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.phone-frame:hover {
+    transform: translateY(-6px);
+}
+
+.phone-frame-hero {
+    flex: 0 0 230px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25), 0 6px 20px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    z-index: 1;
+}
+
+.phone-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 640px) {
+    .app-screenshots {
+        padding: 0 0 48px;
+    }
+
+    .screenshots-row {
+        gap: 12px;
+        padding: 0 16px;
+    }
+
+    .phone-frame {
+        flex: 0 0 30%;
+        border-radius: 20px;
+        border-width: 2px;
+    }
+
+    .phone-frame-hero {
+        flex: 0 0 34%;
+        border-width: 2px;
+    }
+}
+
 /* ---- How It Works ---- */
 .how-it-works {
     padding: 64px 0;
