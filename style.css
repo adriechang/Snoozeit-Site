@@ -333,6 +333,64 @@ body {
     color: var(--text-light);
 }
 
+/* ---- Use Cases ---- */
+.use-cases {
+    background: var(--section-alt);
+    padding: 64px 0;
+    text-align: center;
+}
+
+.use-cases h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.use-case-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.use-case-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.use-case-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.use-case-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.use-case-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .use-cases-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /* ---- Privacy Callout ---- */
 .privacy-callout {
     background: var(--section-alt);
@@ -377,6 +435,44 @@ body {
 .final-cta .price {
     color: var(--text-light);
     opacity: 1;
+}
+
+/* ---- Related Use Cases (cross-links on use-case pages) ---- */
+.related-use-cases {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+}
+
+.related-use-cases h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-light);
+}
+
+.related-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.related-links a {
+    flex: 1;
+    min-width: 140px;
+    padding: 14px 16px;
+    background: var(--brand-light);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.related-links a:hover {
+    background: var(--brand);
+    color: #fff;
 }
 
 /* ---- Footer ---- */
